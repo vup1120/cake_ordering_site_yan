@@ -6,7 +6,7 @@
 <title>手作蛋糕预订｜慕尼黑 Pasing</title>
 <meta name="description" content="巴斯克芝士蛋糕、奶油戚风和蛋糕卷，接单后新鲜制作，慕尼黑 Pasing 自取。">
 <meta name="theme-color" content="#FFFEF7">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23FFFEF7'/%3E%3Cellipse cx='32' cy='26' rx='16' ry='5' fill='none' stroke='%233E322D' stroke-width='3'/%3E%3Cpath d='M16 26v14a16 5 0 0 0 32 0V26' fill='none' stroke='%233E322D' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233E322D'/%3E%3Ctext x='32' y='46' font-size='42' text-anchor='middle' fill='%23FFFEF7' font-family='Georgia,serif' font-style='italic'%3EY%3C/text%3E%3C/svg%3E">
 <style>
 /* 字体放在 fonts 文件夹（OFL 授权），不连 Google；中文用手机自带字体 */
 @font-face{font-family:"Jost";font-style:normal;font-weight:300;font-display:swap;src:url("fonts/jost-latin-300-normal.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
@@ -15,6 +15,12 @@
 @font-face{font-family:"Jost";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/jost-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 @font-face{font-family:"Sacramento";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/sacramento-latin-400-normal.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-display:swap;src:url("fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:600;font-display:swap;src:url("fonts/cormorant-garamond-latin-600-italic.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* 霞鹜文楷（OFL）：只含本站用到的中文字，用于店名和标题；新增的字会先用系统字体 */
+@font-face{font-family:"LXGW WenKai";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/lxgw-wenkai-subset.woff2") format("woff2")}
+/* 龙藏体（OFL）：只含「妍手作」三个字，用于店名，像鹅毛笔的笔迹 */
+@font-face{font-family:"Long Cang";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/long-cang-yan.woff2") format("woff2")}
 :root{
   color-scheme: light;
   --paper:#FFFEF7; --beige:#EFEDE4; --tile:#F4F3EE; --bubble:#F9F8F3;
@@ -28,6 +34,7 @@
   --sans:"Jost","Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
   --serif:"Cormorant Garamond","Noto Serif SC","Songti SC",Georgia,serif;
   --script:"Sacramento","Snell Roundhand","Segoe Script",cursive;
+  --art:"Cormorant Garamond","LXGW WenKai","Kaiti SC","STKaiti","Songti SC",serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -72,7 +79,9 @@ svg.i{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6;stro
 /* header */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:4px;height:64px;padding:0 6px 0 4px;background:var(--paper);border-bottom:1px solid var(--line)}
 .icon-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:0;background:transparent;color:var(--ink);cursor:pointer;text-decoration:none}
-.brand{flex:1;min-width:0;padding-left:6px;font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand{flex:1;min-width:0;padding-left:6px;display:flex;align-items:baseline;gap:9px;color:var(--ink);text-decoration:none;white-space:nowrap;overflow:hidden}
+.brand .en{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;font-size:27px;line-height:1;letter-spacing:.01em}
+.brand .zh{font-family:"Long Cang","LXGW WenKai","Kaiti SC","STKaiti",cursive;font-weight:400;font-size:30px;line-height:1;letter-spacing:.04em}
 .divider{width:1px;height:28px;background:var(--line-strong)}
 .badge{position:absolute;top:3px;right:1px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--ink);color:var(--paper);font-size:12px;line-height:20px;text-align:center;font-weight:500}
 .menu{position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);padding:4px 20px 16px}
@@ -91,7 +100,7 @@ svg.i{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6;stro
 .hero img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
 .hero-copy{position:absolute;left:0;right:0;top:6%;padding:0 16px;text-align:center}
 .script{display:block;font-family:var(--script);font-size:46px;line-height:1;font-weight:400;transform:rotate(-4deg)}
-.hero h1{margin:8px 0 0;font-weight:300;font-size:26px;line-height:1.45;letter-spacing:.16em}
+.hero h1{margin:8px 0 0;font-family:var(--art);font-weight:400;font-size:26px;line-height:1.45;letter-spacing:.16em}
 /* 浅色背景的封面照片：文字改深色、缩小，放在照片最上方 */
 .hero.ink{color:#3E322D}
 .hero.ink .hero-copy{top:2.5%}
@@ -101,15 +110,15 @@ svg.i{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6;stro
 .hero .btn svg{width:30px;height:30px}
 
 /* headings */
-.h-center{margin:0;text-align:center;font-weight:300;font-size:25px;line-height:1.45;letter-spacing:.18em}
-.h-left{margin:0;font-weight:500;font-size:19px;line-height:1.45;letter-spacing:.14em}
-.h-big{margin:0;font-weight:300;font-size:31px;line-height:1.4;letter-spacing:.14em}
+.h-center{margin:0;text-align:center;font-family:var(--art);font-weight:400;font-size:25px;line-height:1.45;letter-spacing:.18em}
+.h-left{margin:0;font-family:var(--art);font-weight:400;font-size:19px;line-height:1.45;letter-spacing:.14em}
+.h-big{margin:0;font-family:var(--art);font-weight:400;font-size:31px;line-height:1.4;letter-spacing:.14em}
 .lead{margin:12px 0 0;color:var(--muted);font-weight:300}
 
 /* categories */
 .cats-sec{background:var(--beige);padding:44px 10px 36px}
 .cats{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 6px}
-.cats a{display:flex;flex-direction:column;align-items:center;gap:12px;text-decoration:none;font-size:15px;line-height:1.4;letter-spacing:.12em;text-align:center}
+.cats a{display:flex;flex-direction:column;align-items:center;gap:12px;text-decoration:none;font-family:var(--art);font-size:16px;line-height:1.4;letter-spacing:.12em;text-align:center}
 .bubble{width:min(100%,112px);aspect-ratio:1/1;border-radius:50%;background:var(--bubble);display:flex;align-items:center;justify-content:center}
 .bubble svg{width:64%;height:64%}
 
@@ -127,7 +136,7 @@ svg.i{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6;stro
 .media .art svg{width:56%;height:auto}
 .tag{position:absolute;left:12px;bottom:12px;padding:3px 9px;background:var(--tag);color:var(--tag-ink);font-size:12px;line-height:1.5;letter-spacing:.08em}
 .info{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-top:14px}
-.name{font-weight:500;font-size:16px;line-height:1.4}
+.name{font-family:var(--art);font-weight:400;font-size:17px;line-height:1.4;letter-spacing:.04em}
 .price{margin-top:4px;color:var(--muted);font-weight:300;font-size:16px}
 .add{flex:0 0 auto;margin:-8px -8px 0 0}
 .add svg{width:34px;height:34px}
@@ -135,7 +144,7 @@ svg.i{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6;stro
 /* chiffon feature */
 .feature img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 42%}
 .plum{background:var(--plum);color:var(--plum-ink);padding:40px 20px 46px}
-.plum h2{margin:0;font-weight:300;font-size:29px;line-height:1.45;letter-spacing:.14em}
+.plum h2{margin:0;font-family:var(--art);font-weight:400;font-size:29px;line-height:1.45;letter-spacing:.14em}
 .plum p{margin:16px 0 0;color:var(--plum-muted);font-weight:300;font-size:17px;line-height:1.75}
 .plum .btn{margin-top:30px}
 
@@ -194,7 +203,9 @@ details[open] summary::after{content:"−"}
 details p{margin:0 0 18px;color:var(--muted);font-weight:300}
 
 footer{background:var(--foot);color:var(--foot-ink);padding:48px 20px calc(96px + env(safe-area-inset-bottom,0px))}
-footer .brand{display:block;padding:0;color:var(--foot-ink)}
+footer .brand{padding:0;color:var(--foot-ink)}
+footer .brand .en{font-size:32px}
+footer .brand .zh{font-size:36px}
 footer p{margin:10px 0 0;color:var(--foot-muted);font-weight:300}
 footer a{color:var(--foot-ink)}
 .contacts{display:flex;flex-direction:column;gap:6px;margin-top:18px}
@@ -227,7 +238,7 @@ dialog.sheet::backdrop{background:rgba(30,22,18,.5)}
 .sheet-media .art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
 .sheet-media .art svg{width:46%}
 .sheet-body{padding:26px 20px 32px}
-.sheet-body h2{margin:0;font-weight:500;font-size:22px;line-height:1.45;letter-spacing:.12em}
+.sheet-body h2{margin:0;font-family:var(--art);font-weight:400;font-size:22px;line-height:1.45;letter-spacing:.12em}
 .sheet-body .desc{margin:8px 0 0;color:var(--muted);font-weight:300}
 .opt{margin-top:26px}
 .sizes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:8px}
@@ -246,7 +257,7 @@ dialog.sheet::backdrop{background:rgba(30,22,18,.5)}
   <button class="icon-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="打开菜单">
     <svg class="i" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 9h22M5 16h22M5 23h22"/></svg>
   </button>
-  <a class="brand js-shop" href="#">[店名]</a>
+  <a class="brand js-logo" href="#" aria-label="Atelier Yan 妍手作"></a>
   <span class="divider" aria-hidden="true"></span>
   <a class="icon-btn" href="#order" aria-label="预订单">
     <svg class="i" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 13h24l-2.6 11.6a2 2 0 0 1-2 1.6H8.6a2 2 0 0 1-2-1.6z"/><path d="M11 13l4-7M21 13l-4-7"/></svg>
@@ -353,7 +364,7 @@ dialog.sheet::backdrop{background:rgba(30,22,18,.5)}
 </main>
 
 <footer>
-  <span class="brand js-shop">[店名]</span>
+  <span class="brand js-logo"></span>
   <p>慕尼黑 Pasing 的手作蛋糕，接单后新鲜制作。</p>
   <div class="contacts" id="contacts"></div>
   <p class="legal"><a href="impressum.html">Impressum</a><a href="impressum.html#datenschutz">Datenschutz</a></p>
@@ -399,7 +410,8 @@ dialog.sheet::backdrop{background:rgba(30,22,18,.5)}
 <script>
 /* ============ 只需要改这里 ============ */
 const CONFIG = {
-  shopName: "[店名]",
+  shopNameEn: "Atelier Yan",   // 店名英文（斜体大字）
+  shopNameZh: "妍手作",        // 店名中文（文楷小字）
   whatsapp: "491732756580",          // 国家码 + 号码，只写数字
   whatsappLabel: "+49 173 2756580",  // 网站上显示的样子
   wechat: "",     // 微信号，例如 "cake_pasing"
@@ -409,7 +421,7 @@ const CONFIG = {
 const PRICES = {
   basque:  [["4寸", 18], ["6寸", 32], ["8寸", 42]],
   chiffon: [["4寸", 20], ["6寸", 35], ["8寸", 45]],
-  roll:    [["半条", 6], ["整条", 18]],
+  roll:    [["半条", 9], ["整条", 18]],
   piece:   [["1块", 4]],
   other:   [["1份", null]],   // null = 价格待定，确定后改成数字
 };
@@ -430,23 +442,33 @@ const BASQUE = [
       { src: "images/chestnut-3.jpg", pos: "50% center" },
       { src: "images/chestnut-4.jpg", pos: "center 78%" },
       { src: "images/chestnut-basque.jpg", pos: "center 62%" },
+      { src: "images/chestnut-5.jpg", pos: "center 55%" },
     ] },
   { name: "桂花芋泥", photos: [
       { src: "images/taro-1.jpg", pos: "46% center" },
       { src: "images/taro-2.jpg", pos: "center" },
     ] },
-  { name: "「伯牙绝弦」抹茶", tint: "sage" },
-  { name: "酒酿桂花",        tint: "butter" },
+  { name: "茉莉青提抹茶", photos: [{ src: "images/jasmine-grape-matcha-1.jpg", pos: "center 60%" }] },
+  { name: "酒酿桂花", photos: [
+      { src: "images/osmanthus-wine-1.jpg", pos: "center 55%" },
+      { src: "images/osmanthus-wine-2.jpg", pos: "25% 42%" },
+    ] },
   { name: "豆乳丸子黑芝麻", photos: [
       { src: "images/black-sesame-1.jpg", pos: "center 55%" },
       { src: "images/black-sesame-2.jpg", pos: "center 65%" },
     ] },
-  { name: "Lotus 焦糖饼干",  tint: "sand" },
+  { name: "Lotus 焦糖饼干", photos: [{ src: "images/lotus-1.jpg", pos: "55% center" }] },
 ];
 const CHIFFON = [
   { name: "栗子可可戚风", desc: "可可戚风配栗子奶油和糖渍栗子，4 / 6 / 8 寸可选。生日蛋糕请至少提前 2 天预订。", photos: [
       { src: "images/chestnut-chiffon.jpg", pos: "center 40%" },
       { src: "images/chestnut-chiffon-2.jpg", pos: "center 55%" },
+    ] },
+  { name: "茉莉抹茶戚风", desc: "茉莉抹茶奶油戚风，4 / 6 / 8 寸可选。生日蛋糕请至少提前 2 天预订。", photos: [
+      { src: "images/jasmine-matcha-chiffon-1.jpg", pos: "center 55%" },
+    ] },
+  { name: "海盐奥利奥戚风", desc: "海盐奥利奥奶油戚风，4 / 6 / 8 寸可选，装饰可以一起商量。生日蛋糕请至少提前 2 天预订。", photos: [
+      { src: "images/oreo-chiffon-1.jpg", pos: "center 62%" },
     ] },
   { name: "定制戚风", label: "奶油戚风（定制）", custom: true, tint: "rose" },
 ];
@@ -513,8 +535,9 @@ const fromPrice = (it) => {
 };
 
 // shop name + contacts
-document.querySelectorAll(".js-shop").forEach((n) => (n.textContent = CONFIG.shopName));
-document.title = CONFIG.shopName + "｜手作蛋糕预订｜慕尼黑 Pasing";
+const SHOP = CONFIG.shopNameEn + " " + CONFIG.shopNameZh;
+document.querySelectorAll(".js-logo").forEach((n) => n.replaceChildren(el("span", { className: "en", textContent: CONFIG.shopNameEn }), el("span", { className: "zh", textContent: CONFIG.shopNameZh })));
+document.title = SHOP + "｜手作蛋糕预订｜慕尼黑 Pasing";
 const contacts = $("contacts");
 if (CONFIG.whatsapp) contacts.append(el("a", { href: "https://wa.me/" + CONFIG.whatsapp, textContent: "WhatsApp " + (CONFIG.whatsappLabel || "+" + CONFIG.whatsapp) }));
 if (CONFIG.wechat) contacts.append(el("span", { textContent: "微信 " + CONFIG.wechat }));

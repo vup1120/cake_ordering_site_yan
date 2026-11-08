@@ -2,12 +2,12 @@
 
 A single-page, phone-first site: product cards, a product sheet with size choice, and an order basket that sends the whole order via WhatsApp or copies it for WeChat. No build step.
 
-Files: `index.html` (the site), `impressum.html` (Impressum + Datenschutzerklärung), `images/`, `fonts/` (self-hosted, SIL Open Font License; no Google Fonts connection).
+Files: `index.html` (the site), `impressum.html` (Impressum + Datenschutzerklärung), `images/`, `fonts/` (self-hosted, SIL Open Font License; no Google Fonts connection). The Chinese headings use LXGW WenKai, subset to only the characters currently on the site (`lxgw-wenkai-subset.woff2`). Chinese characters added later are shown in the phone's system font until the subset is regenerated. The shop name 妍手作 is set in Long Cang (`long-cang-yan.woff2`, only those three characters); if the Chinese shop name changes, that file must be regenerated too.
 
 ## Before going live
 
 1. `impressum.html`: replace every `[...]` placeholder (name, address, e-mail, VAT note, hosting provider, date). Have it checked if unsure.
-2. `index.html`: in the `CONFIG` block set `shopName`, and optionally `wechat` and `instagram`. The WhatsApp number is already set.
+2. `index.html`: the shop name (`shopNameEn`, `shopNameZh`) and the WhatsApp number are already set. Optionally fill `wechat` and `instagram` in the `CONFIG` block.
 
 ## Publish: private GitHub repo + Cloudflare Pages
 
