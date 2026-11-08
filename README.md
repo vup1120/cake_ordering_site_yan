@@ -1,2 +1,27 @@
-# cake_ordering_site_yan
-**Pasing 手作甜點｜慕尼黑手工蛋糕預訂平台**  用心製作每一份甜蜜！主打新鮮現做的巴斯克乳酪蛋糕、奶油戚風及特色蛋糕捲，提供多種口味、尺寸與客製化選擇。堅持接單後製作，讓每個生日、節日與日常時刻都充滿幸福滋味。支援線上預訂、WhatsApp 及微信聯絡，慕尼黑 Pasing 自取。
+# Cake pre-order site (Munich, Pasing)
+
+A single-page, phone-first site: product cards, a product sheet with size choice, and an order basket that sends the whole order via WhatsApp or copies it for WeChat. No build step.
+
+Files: `index.html` (the site), `impressum.html` (Impressum + Datenschutzerklärung), `images/`, `fonts/` (self-hosted, SIL Open Font License; no Google Fonts connection).
+
+## Before going live
+
+1. `impressum.html`: replace every `[...]` placeholder (name, address, e-mail, VAT note, hosting provider, date). Have it checked if unsure.
+2. `index.html`: in the `CONFIG` block set `shopName`, and optionally `wechat` and `instagram`. The WhatsApp number is already set.
+
+## Publish: private GitHub repo + Cloudflare Pages
+
+1. On GitHub, create a new repository and choose **Private**. Upload all files so that `index.html` sits at the top level (with the `images` and `fonts` folders next to it).
+2. In Cloudflare (dash.cloudflare.com): **Workers & Pages › Create application › Pages › Connect to Git**. Authorize GitHub and pick the repository. Choose **Connect to Git** from the start: a project created by direct upload cannot be switched to Git later.
+3. Build settings: Framework preset **None**, Build command empty, Build output directory `/`. Deploy.
+4. The site is live at `https://<project>.pages.dev` (a custom domain can be added in the project settings).
+
+To update later: upload the changed files to the GitHub repository (Add file › Upload files, same file names). Cloudflare redeploys automatically within about a minute.
+
+## Note on GitHub Pages
+
+GitHub's rules say GitHub Pages is not meant to host an online business or a site mainly for taking orders, so this site is served by Cloudflare instead. The repository stays private.
+
+## Editing content
+
+All products, prices and photos are in the `CONFIG`, `PRICES`, `BASQUE`, `CHIFFON`, `ROLLS`, `PIECES` and `OTHERS` lists near the bottom of `index.html`. A price of `null` shows as 待定. For photos use `photos: [{ src: "images/a.jpg", pos: "center 60%" }]`; the first one shows on the card.
